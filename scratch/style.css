@@ -1,0 +1,38 @@
+body {
+  background-color: #00274c; /* Michigan blue */
+  font-family: Georgia, 'Times New Roman', serif;
+  margin: 0;
+  color: #ffffff;
+}
+.header {
+  background-color: #ffcb05; /* Maize */
+  color: #00274c;
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 6px solid #00274c;
+}
+.topnav a {
+  color: #00274c;
+  font-weight: bold;
+  text-decoration: none;
+}
+.topnav a:hover { text-decoration: underline; }
+.content {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Helvetica', Arial, sans-serif;
+  border-radius: 6px;
+}
+h2 {
+  color: #00274c;
+  border-bottom: 3px solid #ffcb05;
+  padding-bottom: 6px;
+}
+.logo { display: block; max-width: 200px; margin: 20px auto; }
+.video-wrap, .tableau-wrap {
+  margin: 20px 0;
+  text-align: center;
+}
