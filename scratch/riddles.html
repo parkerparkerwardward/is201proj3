@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Riddle Generator</title>
+  <style>
+    body {
+      font-family: 'Helvetica', Arial, sans-serif;
+      background: linear-gradient(135deg, #00274c, #1a4a7a);
+      color: #fff;
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: #fff;
+      color: #1a1a1a;
+      max-width: 550px;
+      width: 100%;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    h1 { color: #00274c; margin-top: 0; }
+    .riddle {
+      font-size: 1.2em;
+      margin: 30px 0;
+      padding: 20px;
+      background: #f5f7fa;
+      border-left: 5px solid #ffcb05;
+      border-radius: 6px;
+      text-align: left;
+    }
+    .answer {
+      margin-top: 15px;
+      padding: 15px;
+      background: #fff8dc;
+      border-radius: 6px;
+      display: none;
+      text-align: left;
+    }
+    .answer.show { display: block; }
+    button {
+      background: #00274c;
+      color: #ffcb05;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover { background: #1a4a7a; }
+    .back { display: block; margin-top: 20px; color: #00274c; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🧩 Riddle Generator</h1>
+    <p>Click the button for a brain teaser!</p>
+
+    <div class="riddle" id="riddle">Press "New Riddle" to begin.</div>
+    <div class="answer" id="answer"></div>
+
+    <button onclick="newRiddle()">New Riddle</button>
+    <button onclick="showAnswer()">Reveal Answer</button>
+
+    <a class="back" href="index.html">← Back to scratch page</a>
+  </div>
+
+  <script>
+    const riddles = [
+      { q: "I speak without a mouth and hear without ears. I have no body, but I come alive with the wind. What am I?", a: "An echo." },
+      { q: "The more you take, the more you leave behind. What are they?", a: "Footsteps." },
+      { q: "I have cities, but no houses. Mountains, but no trees. Water, but no fish. What am I?", a: "A map." },
+      { q: "What has keys but can't open locks?", a: "A piano." },
+      { q: "I'm tall when I'm young, and I'm short when I'm old. What am I?", a: "A candle." },
+      { q: "What has to be broken before you can use it?", a: "An egg." },
+      { q: "What gets wetter the more it dries?", a: "A towel." },
+      { q: "I have branches, but no fruit, trunk, or leaves. What am I?", a: "A bank." },
+      { q: "What has hands but cannot clap?", a: "A clock." },
+      { q: "The more of this there is, the less you see. What is it?", a: "Darkness." },
+      { q: "What can travel around the world while staying in a corner?", a: "A stamp." },
+      { q: "What has a head and a tail but no body?", a: "A coin." }
+    ];
+
+    let current = null;
+
+    function newRiddle() {
+      current = riddles[Math.floor(Math.random() * riddles.length)];
+      document.getElementById('riddle').textContent = current.q;
+      const ans = document.getElementById('answer');
+      ans.textContent = '';
+      ans.classList.remove('show');
+    }
+
+    function showAnswer() {
+      if (!current) { newRiddle(); return; }
+      const ans = document.getElementById('answer');
+      ans.textContent = "Answer: " + current.a;
+      ans.classList.add('show');
+    }
+  </script>
+</body>
+</html>
