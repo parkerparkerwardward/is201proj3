@@ -31,7 +31,7 @@ h2 {
   border-bottom: 3px solid #ffcb05;
   padding-bottom: 6px;
 }
-.logo { display: block; max-width: 200px; margin: 20px auto; }
+.logo { display: block; max-width: 200px; margin: 20px auto; background: white; padding: 10px; }
 .video-wrap, .tableau-wrap {
   margin: 20px 0;
   text-align: center;
